@@ -1,47 +1,45 @@
-![Logo](https://storage.googleapis.com/tf_model_garden/tf_model_garden_logo.png)
+# 👁️🔊 YOLO Voice Assistant – Real-Time Object Detection with Speech
 
-# Welcome to the Model Garden for TensorFlow
+This project combines **YOLOv3 object detection** with **text-to-speech (TTS)** to describe what the camera sees.
+It’s like giving your webcam a voice — turning visual inputs into spoken words in real time.
 
-The TensorFlow Model Garden is a repository with a number of different
-implementations of state-of-the-art (SOTA) models and modeling solutions for
-TensorFlow users. We aim to demonstrate the best practices for modeling so that
-TensorFlow users can take full advantage of TensorFlow for their research and
-product development.
+---
 
-To improve the transparency and reproducibility of our models, training logs on
-[TensorBoard.dev](https://tensorboard.dev) are also provided for models to the
-extent possible though not all models are suitable.
+## ✨ Features
 
-| Directory | Description |
-|-----------|-------------|
-| [official](official) | • A collection of example implementations for SOTA models using the latest TensorFlow 2's high-level APIs<br />• Officially maintained, supported, and kept up to date with the latest TensorFlow 2 APIs by TensorFlow<br />• Reasonably optimized for fast performance while still being easy to read |
-| [research](research) | • A collection of research model implementations in TensorFlow 1 or 2 by researchers<br />• Maintained and supported by researchers |
-| [community](community) | • A curated list of the GitHub repositories with machine learning models and implementations powered by TensorFlow 2 |
-| [orbit](orbit) | • A flexible and lightweight library that users can easily use or fork when writing customized training loop code in TensorFlow 2.x. It seamlessly integrates with `tf.distribute` and supports running on different device types (CPU, GPU, and TPU). |
+* 🎥 **Real-time Object Detection** using YOLOv3 + OpenCV
+* 🧠 **Trained on COCO dataset** (80 common object classes)
+* 🗣️ **Voice Feedback** with pyttsx3 – announces detected objects
+* 🎯 **Spatial Awareness** – describes objects by position (e.g., “top left person” or “mid center chair”)
+* 💻 **Works with Webcam Feed** out-of-the-box
 
-## [Announcements](https://github.com/tensorflow/models/wiki/Announcements)
+---
 
-## Contributions
+## 🎯 Use Cases
 
-[![help wanted:paper implementation](https://img.shields.io/github/issues/tensorflow/models/help%20wanted%3Apaper%20implementation)](https://github.com/tensorflow/models/labels/help%20wanted%3Apaper%20implementation)
+* 👓 **Assistive Technology** → Helping visually impaired individuals understand surroundings
+* 🏠 **Smart Home** → Real-time monitoring and object narration
+* 🤖 **Robotics** → Enable robots/drones to “speak” what they detect
+* 🎓 **Learning Projects** → Great for exploring **Computer Vision + Speech Synthesis**
 
-If you want to contribute, please review the [contribution guidelines](https://github.com/tensorflow/models/wiki/How-to-contribute).
+---
 
-## License
+## 🛠️ Tech Stack
 
-[Apache License 2.0](LICENSE)
+* **YOLOv3** – Pretrained on COCO dataset (object detection)
+* **OpenCV (cv2)** – Capturing webcam frames + running YOLO inference
+* **pyttsx3** – Offline text-to-speech engine
+* **NumPy** – Fast matrix computations
 
-## Citing TensorFlow Model Garden
+---
 
-If you use TensorFlow Model Garden in your research, please cite this repository.
+## 🚀 How It Works
 
-```
-@misc{tensorflowmodelgarden2020,
-  author = {Hongkun Yu and Chen Chen and Xianzhi Du and Yeqing Li and
-            Abdullah Rashwan and Le Hou and Pengchong Jin and Fan Yang and
-            Frederick Liu and Jaeyoun Kim and Jing Li},
-  title = {{TensorFlow Model Garden}},
-  howpublished = {\url{https://github.com/tensorflow/models}},
-  year = {2020}
-}
-```
+1. Capture frames from the webcam
+2. Process frames through YOLOv3 for object detection
+3. Identify objects + their positions (left/center/right, top/mid/bottom)
+4. Convert detections into spoken descriptions using pyttsx3
+
+---
+
+👉 Do you want me to also suggest a **catchy repo name** for this (something beyond “YOLO + speech”), like what we did for the PDF/Web RAG projects?
